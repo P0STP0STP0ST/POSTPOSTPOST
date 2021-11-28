@@ -8,10 +8,10 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
-    <title>Hello, world!</title>
+    <title>POSTPOSTPOST</title>
   </head>
   <body>
-    <h1>Hello, world!</h1>
+    <h1>POSTPOSTPOST</h1>
 
     <div class="container my-4">
 
@@ -20,22 +20,55 @@
 
         <!--Grid column-->
         <div class="col-lg-4 col-md-12 mb-4">
-          <img src="images/1-beard.jpeg" class="img-fluid mb-4" alt="">
-          <img src="images/2-dontknow.jpeg" class="img-fluid mb-4" alt="" data-wow-delay="0.3s">
+          <img src="images/1-beard.jpeg" class="img-fluid mb-4" alt="" id="img-1">
+          <img src="images/2-dontknow.jpeg" class="img-fluid mb-4" alt="" data-wow-delay="0.3s" id="img-2">
         </div>
         <!--Grid column-->
 
         <!--Grid column-->
         <div class="col-lg-4 col-md-6 mb-4">
-          <img src="images/3-fisher.jpeg" class="img-fluid mb-4" alt="" data-wow-delay="0.2s">
-          <img src="images/4-gigachad.jpeg" class="img-fluid mb-4" alt="" data-wow-delay="0.5s">
+          <img src="images/3-fisher.jpeg" class="img-fluid mb-4" alt="" data-wow-delay="0.2s" id="img-3">
+          <img src="images/4-gigachad.jpeg" class="img-fluid mb-4" alt="" data-wow-delay="0.5s" id="img-4">
         </div>
         <!--Grid column-->
 
       </div>
       <!--Grid row-->
-
     </div>
+
+    <div class="container my-4">
+      <label for="postRange" class="form-label">How POST?</label>
+      <input type="range" class="form-range" min="0" max="5" id="postRange">
+      <p>Value: <span id="value"></span></p>
+    </div>
+
+    <script>
+      var slider = document.getElementById("postRange");
+      var value = document.getElementById("value");
+      value.innerHTML = slider.value;
+
+      slider.oninput = function() {
+        value.innerHTML = this.value;
+        updateImages(this.value);
+      }
+
+      imagesMapping = {
+        1: "images/1-beard.jpeg",
+        2: "images/2-dontknow.jpeg",
+        3: "images/3-fisher.jpeg",
+        4: "images/4-gigachad.jpeg",
+        5: "images/5-same.jpeg"
+      }
+
+      function updateImages(degreeOfPostness) {
+        document.querySelectorAll('img.img-fluid').forEach(function(image) {
+          imageSrc = imagesMapping[degreeOfPostness]
+          image.src = imageSrc
+        });
+      }
+
+
+    </script>
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
