@@ -97,6 +97,7 @@
 
       function updateImages(degreeOfPostness) {
         // 1. Get how many images we need to change
+        var degreeOfPostness = parseInt(degreeOfPostness);
         inUseImages = []
 
         document.querySelectorAll('img.img-fluid').forEach(function(image) {
@@ -107,7 +108,7 @@
         });
 
         mustChangeImages = inUseImages.filter(function(image) {
-          return image["spans"].length == 1;
+          return image["spans"].length == 1 || !image["spans"].includes(degreeOfPostness);
         });
 
         toChangeCount = Math.max(DesiredTilesToChange, mustChangeImages.length);
