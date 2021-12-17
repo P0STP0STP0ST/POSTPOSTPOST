@@ -1,0 +1,29 @@
+html {
+  height: 100%;
+}
+
+body {
+  height: 100%;
+  padding: 20px;
+}
+
+/*.container {
+  height: 50%;
+  padding-left: 0px;
+  padding-right: 0px;
+}*/
+
+.slider {
+  width: 100%;
+  padding: 10px;
+}
+
+.form-range {
+  width: 80%;
+}
+
+.img-fluid {
+  display: block;
+  width: auto;
+  max-height: 100%;
+}
