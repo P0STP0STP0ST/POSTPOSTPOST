@@ -1,18 +1,41 @@
-html {
-  height: 100%;
-}
+html {}
 
 body {
-  height: 100%;
+  /*height: 95vh;*/
   padding: 20px;
+  width: 100%;
 }
 
-/*.container {
-  height: 50%;
-  padding-left: 0px;
-  padding-right: 0px;
+/*--------------------------------*/
+/* Images stuff*/
+.container {
+  width: 100%;
+  /*border: dashed blue 1px;*/
+}
+
+/*.container img {
+  max-height: 50%;
+  max-width: 100%;
 }*/
 
+img {
+  max-height: 220px;
+  height: 100%;
+  width: auto;
+}
+
+.col-lg-4 {
+  padding: 5px;
+}
+
+/*.img-fluid {
+  display: block;
+  width: auto;
+  max-height: 100%;
+}*/
+
+/*--------------------------------*/
+/* Slider stuff*/
 .slider {
   width: 100%;
   padding: 10px;
@@ -20,10 +43,4 @@ body {
 
 .form-range {
   width: 80%;
-}
-
-.img-fluid {
-  display: block;
-  width: auto;
-  max-height: 100%;
 }
