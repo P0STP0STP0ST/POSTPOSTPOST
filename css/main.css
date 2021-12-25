@@ -4,7 +4,7 @@ body {
   /*height: 95vh;*/
   padding: 0px;
   width: 100%;
-  /*overflow: hidden;*/
+  overflow: hidden;
 }
 
 /*--------------------------------*/
@@ -12,14 +12,9 @@ body {
 .container {
   max-width: 100%;
   padding: 0;
-  border: dashed blue 1px;
+  /*border: dashed blue 1px;*/
   margin:0 auto;
 }
-
-/*.container img {
-  max-height: 50%;
-  max-width: 100%;
-}*/
 
 img {
   max-height: 700px;
@@ -39,8 +34,17 @@ img {
 .slider {
   width: 100%;
   padding: 10px;
+  position:fixed;
+  bottom: 5px;
+  left: 50px;
+  /*background-color: rgba(255, 255, 255, 0.2);*/
 }
 
 .form-range {
-  width: 80%;
+  width: 60%;
+}
+
+#howpost {
+  font-weight: bold;
+  font-size: large;
 }
