@@ -2,15 +2,18 @@ html {}
 
 body {
   /*height: 95vh;*/
-  padding: 20px;
+  padding: 0px;
   width: 100%;
+  /*overflow: hidden;*/
 }
 
 /*--------------------------------*/
 /* Images stuff*/
 .container {
-  width: 100%;
-  /*border: dashed blue 1px;*/
+  max-width: 100%;
+  padding: 0;
+  border: dashed blue 1px;
+  margin:0 auto;
 }
 
 /*.container img {
@@ -19,20 +22,17 @@ body {
 }*/
 
 img {
-  max-height: 220px;
+  max-height: 700px;
   height: 100%;
   width: auto;
+  margin-bottom: 0px;
 }
 
-.col-lg-4 {
-  padding: 5px;
+.row, .column {
+  padding: 0px;
+  margin: 0;
 }
 
-/*.img-fluid {
-  display: block;
-  width: auto;
-  max-height: 100%;
-}*/
 
 /*--------------------------------*/
 /* Slider stuff*/

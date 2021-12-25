@@ -8,7 +8,6 @@ slider.oninput = function() {
 }
 const DesiredTilesToChange = 3;
 
-
 var imageMappings;
 // imageMappings = [
 //   {"id": 1, "spans":  [1,2], "path": "images/1-beard.jpeg"},
