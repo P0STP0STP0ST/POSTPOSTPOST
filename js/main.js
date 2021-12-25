@@ -9,24 +9,6 @@ slider.oninput = function() {
 const DesiredTilesToChange = 3;
 
 var imageMappings;
-// imageMappings = [
-//   {"id": 1, "spans":  [1,2], "path": "images/1-beard.jpeg"},
-//   {"id": 2, "spans":  [1,2], "path": "images/2-dontknow.jpeg"},
-//   {"id": 3, "spans":  [1,2], "path": "images/3-fisher.jpeg"},
-//   {"id": 4, "spans":  [1,2], "path": "images/4-gigachad.jpeg"},
-//   {"id": 5, "spans":  [2,3], "path": "images/5-same.jpeg"},
-//   {"id": 6, "spans":  [2,3], "path": "images/6-orb.jpeg"},
-//   {"id": 7, "spans":  [2,3], "path": "images/7-average.jpeg"},
-//   {"id": 8, "spans":  [2,3], "path": "images/8-friends.jpeg"},
-//   {"id": 9, "spans":  [3,4], "path": "images/9-bus.jpeg"},
-//   {"id": 10, "spans": [3,4], "path": "images/10-bed.jpeg"},
-//   {"id": 11, "spans": [3,4], "path": "images/11-realism.png"},
-//   {"id": 12, "spans": [3,4], "path": "images/12-colon.jpeg"},
-//   {"id": 13, "spans": [4], "path": "images/13-brain.png"},
-//   {"id": 14, "spans": [4], "path": "images/14-leo.jpeg"},
-//   {"id": 15, "spans": [4], "path": "images/15-metoo.jpeg"},
-//   {"id": 16, "spans": [4], "path": "images/16-weeks.jpeg"}
-// ]
 
 imageMappings = [
   {"id": 1,   "spans": [1,2], "path": "archive/1-06.png"},
@@ -208,6 +190,25 @@ function updateImages(degreeOfPostness) {
     }
   });
 }
+
+///////////////////////////////////////////////////
+//////////////    MODAL STUFF        //////////////
+///////////////////////////////////////////////////
+// https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_modal_img
+// Get the image and insert it inside the modal - use its "alt" text as a caption
+var modal = document.getElementById("myModal");
+var modalImg = document.getElementById("modal-img");
+function openImageInModal(img){
+  modal.style.display = "block";
+  modalImg.src = img.src;
+}
+
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
+span.onclick = function() {
+  modal.style.display = "none";
+}
+
 
 // function that returns which tiles to change
 // function that returns which images to use for changing
