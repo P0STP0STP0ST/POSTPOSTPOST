@@ -6,7 +6,7 @@ slider.oninput = function() {
   value.innerHTML = this.value;
   updateImagesRandom(this.value);
 }
-const DesiredTilesToChange = 3;
+const DesiredTilesToChange = 10;
 
 var imageMappings;
 
@@ -140,6 +140,22 @@ window.onload = function(){
 function updateImagesRandom(degreeOfPostness) {
   // 1. Get how many images we need to change
   var degreeOfPostness = parseInt(degreeOfPostness);
+  inUseImages = []
+
+  document.querySelectorAll('img.img-fluid').forEach(function(image) {
+    image = imageMappings.find(function(imgMapping) {
+      return imgMapping["path"] == image.src.split("/").slice(-2).join("/");
+    })
+    if (image != null) {
+      console.log("HOWWOW");
+      console.log(image["path"]);
+      inUseImages.push(image["path"]);
+    }
+  });
+
+  availableImages = imageMappings.filter(function(image) {
+    return !inUseImages.includes(image["path"]);
+  });
 
   // 3. Update the images
   totalChanged = 0;
@@ -147,12 +163,13 @@ function updateImagesRandom(degreeOfPostness) {
   document.querySelectorAll('img.img-fluid').forEach(function(image, index) {
     trimmedImgPath = image.src.split("/").slice(-2).join("/");
     if ((getRandomInt(2) % 2 == 0) && (totalChanged < remainingToChangeCounter)) {
-      imageSrc = imageMappings[totalChanged]["path"];
+      imageSrc = availableImages[getRandomInt(availableImages.length - 1)]["path"];
       image.src = imageSrc;
       totalChanged += 1;
     }
   });
 }
+
 function updateImages(degreeOfPostness) {
   // 1. Get how many images we need to change
   var degreeOfPostness = parseInt(degreeOfPostness);
