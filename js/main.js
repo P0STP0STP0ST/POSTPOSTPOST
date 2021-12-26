@@ -4,7 +4,7 @@ value.innerHTML = slider.value;
 
 slider.oninput = function() {
   value.innerHTML = this.value;
-  updateImages(this.value);
+  updateImagesRandom(this.value);
 }
 const DesiredTilesToChange = 3;
 
@@ -137,6 +137,22 @@ window.onload = function(){
   });
 }
 
+function updateImagesRandom(degreeOfPostness) {
+  // 1. Get how many images we need to change
+  var degreeOfPostness = parseInt(degreeOfPostness);
+
+  // 3. Update the images
+  totalChanged = 0;
+  remainingToChangeCounter = DesiredTilesToChange;
+  document.querySelectorAll('img.img-fluid').forEach(function(image, index) {
+    trimmedImgPath = image.src.split("/").slice(-2).join("/");
+    if ((getRandomInt(2) % 2 == 0) && (totalChanged < remainingToChangeCounter)) {
+      imageSrc = imageMappings[totalChanged]["path"];
+      image.src = imageSrc;
+      totalChanged += 1;
+    }
+  });
+}
 function updateImages(degreeOfPostness) {
   // 1. Get how many images we need to change
   var degreeOfPostness = parseInt(degreeOfPostness);
@@ -189,6 +205,10 @@ function updateImages(degreeOfPostness) {
       }
     }
   });
+}
+
+function getRandomInt(max) {
+  return Math.floor(Math.random() * max);
 }
 
 ///////////////////////////////////////////////////
