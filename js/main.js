@@ -1,12 +1,12 @@
 var slider = document.getElementById("postRange");
-var value = document.getElementById("value");
-value.innerHTML = slider.value;
+// var value = document.getElementById("value");
+// value.innerHTML = slider.value;
 
 slider.oninput = function() {
-  value.innerHTML = this.value;
+  // value.innerHTML = this.value;
   updateImagesRandom(this.value);
 }
-const DesiredTilesToChange = 10;
+const DesiredTilesToChange = 18;
 
 var imageMappings;
 
@@ -137,6 +137,7 @@ window.onload = function(){
   });
 }
 
+// TODO: CLEAN THIS MF
 function updateImagesRandom(degreeOfPostness) {
   // 1. Get how many images we need to change
   var degreeOfPostness = parseInt(degreeOfPostness);
